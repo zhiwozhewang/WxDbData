@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.myapplication.ViewInverseMethods"/>
+        <variable
+                name="viewModel"
+                type="com.example.myapplication.MainViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.name}"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(viewModel.age)}"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        ></TextView>
+        <!--android:text="@{viewModel.isMan ? @string/man : @string/woman}"/>-->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.text}"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.text}"/>
+        <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                />
+        <!--app:imgUrl="@{viewModel.imgUrl}"-->
+        <TextView
+                android:id="@+id/num_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(viewModel.num)}"/>
+        <!--<EditText-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@={ViewInverseMethods.numToSex(viewModel.num)}"/>-->
+
+        <Button
+                android:id="@+id/click_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点我"/>
+        <!--android:onClick="@{v -> viewModel.oneYearLater()}"-->
+
+    </LinearLayout>
+</layout>
+
